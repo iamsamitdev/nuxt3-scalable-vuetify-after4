@@ -20,6 +20,9 @@
     ]
   })
 
+  const config = useRuntimeConfig()
+	const STRAPI_URL_ROOT: string = config.strapi.url.root
+
   // Dialog ================================
   const dialog = ref(false)
   const deletedialog = ref(false)
@@ -217,10 +220,10 @@
     if(product.value.data.attributes.image.data){
       // If image more than one read last image
       if(product.value.data.attributes.image.data.length > 1){
-        imageUrl.value = `http://localhost:1337${product.value.data.attributes.image.data[product.value.data.attributes.image.data.length - 1].attributes.formats.thumbnail.url}`
+        imageUrl.value = `${STRAPI_URL_ROOT}${product.value.data.attributes.image.data[product.value.data.attributes.image.data.length - 1].attributes.formats.thumbnail.url}`
       }else{
         // If image only one read first image
-        imageUrl.value = `http://localhost:1337${product.value.data.attributes.image.data[0].attributes.formats.thumbnail.url}`
+        imageUrl.value = `${STRAPI_URL_ROOT}${product.value.data.attributes.image.data[0].attributes.formats.thumbnail.url}`
       }
     } else {
       imageUrl.value = null
@@ -509,7 +512,7 @@
                       <!-- If image more than one read last image -->
                       <v-img
                         v-if="product.attributes.image.data.length > 1"
-                        :src="`http://localhost:1337${product.attributes.image.data[product.attributes.image.data.length - 1].attributes.formats.thumbnail.url}`"
+                        :src="`${STRAPI_URL_ROOT}/${product.attributes.image.data[product.attributes.image.data.length - 1].attributes.formats.thumbnail.url}`"
                         width="100px"
                         class="rounded-circle img-fluid"
                       ></v-img>
@@ -517,7 +520,7 @@
                       <!-- If image only one read first image -->
                       <v-img
                         v-else
-                        :src="`http://localhost:1337${product.attributes.image.data[0].attributes.formats.thumbnail.url}`"
+                        :src="`${STRAPI_URL_ROOT}/${product.attributes.image.data[0].attributes.formats.thumbnail.url}`"
                         width="100px"
                         class="rounded-circle img-fluid"
                       ></v-img>

@@ -2286,10 +2286,6 @@ Step 7: Debug Pinia in Vue extension chrome
 +++++++++++++++++++++++++++++++++
 Deployed Nuxt 3 on vercel.com
 
-Step 1: Build & Development Settings
-
-
-
 
 
 
