@@ -21,7 +21,7 @@
   })
 
   const config = useRuntimeConfig()
-	const STRAPI_URL_ROOT: string = config.strapi.url.root
+	const STRAPI_URL_ROOT: string = config.urlroot
 
   // Dialog ================================
   const dialog = ref(false)
