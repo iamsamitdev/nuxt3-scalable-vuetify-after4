@@ -2284,9 +2284,89 @@ Step 7: Debug Pinia in Vue extension chrome
 | เก็บตกตอนที่ 5
 | การ Build และ Deployed project ไปใช้งานจริง
 +++++++++++++++++++++++++++++++++
-Deployed Nuxt 3 on vercel.com
+Deployed Strapi 4 on Render.com
+----
+Step 1: Config .env nad database.ts
+---
+.env
+---
+HOST=0.0.0.0
+PORT=1337
+APP_KEYS=WrGAegJEmtGkjgCVzGTjaw==,KzIlBamGWl98CFY+x3O/EQ==,1SlHGckaJMtQHWF8O1VBcA==,VpQIaghlY3uwm/06EUUmFQ==
+API_TOKEN_SALT=mpW25zkijJN4fCOPAaxJ1g==
+ADMIN_JWT_SECRET=BoS4w+e4EA2ZnnjGflWeEg==
+JWT_SECRET=Mf3RUBS1KChbf4pPP2uThQ==
+
+# REFRESH_SECRET=Mf3RUBS1KChbf4pPP2uThQ==
+# REFRESH_TOKEN_EXPIRES=2d
+# JWT_SECRET_EXPIRES=60s
+# NODE_ENV=development
+
+# MySQL
+DATABASE_HOST=localhost
+DATABASE_PORT=3306
+DATABASE_NAME=nuxtstockdb
+DATABASE_USERNAME=root
+DATABASE_PASSWORD=123456
+
+database.ts
+---
+export default ({ env }) => ({
+  connection: {
+    client: 'mysql',
+    connection: {
+      host: env('DATABASE_HOST'),
+      port: env.int('DATABASE_PORT'),
+      database: env('DATABASE_NAME'),
+      user: env('DATABASE_USERNAME'),
+      password: env('DATABASE_PASSWORD'),
+      ssl: env.bool('DATABASE_SSL', false),
+    },
+  },
+});
+
+Step 2: Create MySQL Database for connect
+---
+Database:	geniuslab_nuxtstockdb
+Host:		localhost
+Username:	geniuslab_nuxtstockdb
+Password:	KLeBeWMT
+
+Step 3: Create New + > Web Service
+---
+In dashboard render Create New + > Web Service
+
+Deployed Nuxt 3 on Render.com
+----
+
+Step 1: Build & Development Settings
+
+Build Command : nuxt generate
+Output Directory: dist
+
+MySQL on GeniusLab
+----
+Database:	geniuslab_nuxtstockdb
+Host:		localhost
+Username:	geniuslab_nuxtstockdb
+Password:	KLeBeWMT
 
 
+PostgreSQL on Render
+---
+Hostname: dpg-cmuci16g1b2c73eguuig-a
+Port: 5432
+Database: sampleprismadb
+Username: postgresql
+Password: IAhazflWo20PYpVkm51MjGOncX3Hc0C9
+
+
+Deployed Nuxt 3 on Render.com
+---
+SERVER_PRESET=render_com
+NODE_VERSION=18
+STRAPI_URL=https://strapi-api-7kxr.onrender.com/api
+DATABASE_URL=postgres://postgresql:IAhazflWo20PYpVkm51MjGOncX3Hc0C9@dpg-cmuci16g1b2c73eguuig-a.singapore-postgres.render.com/sampleprismadb?schema=public
 
 
 

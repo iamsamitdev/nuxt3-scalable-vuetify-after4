@@ -512,7 +512,7 @@
                       <!-- If image more than one read last image -->
                       <v-img
                         v-if="product.attributes.image.data.length > 1"
-                        :src="`${STRAPI_URL_ROOT}/${product.attributes.image.data[product.attributes.image.data.length - 1].attributes.formats.thumbnail.url}`"
+                        :src="`${STRAPI_URL_ROOT}${product.attributes.image.data[product.attributes.image.data.length - 1].attributes.formats.thumbnail.url}`"
                         width="100px"
                         class="rounded-circle img-fluid"
                       ></v-img>
@@ -520,7 +520,7 @@
                       <!-- If image only one read first image -->
                       <v-img
                         v-else
-                        :src="`${STRAPI_URL_ROOT}/${product.attributes.image.data[0].attributes.formats.thumbnail.url}`"
+                        :src="`${STRAPI_URL_ROOT}${product.attributes.image.data[0].attributes.formats.thumbnail.url}`"
                         width="100px"
                         class="rounded-circle img-fluid"
                       ></v-img>
