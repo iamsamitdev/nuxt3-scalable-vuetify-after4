@@ -2330,7 +2330,7 @@ Step 2: Create MySQL Database for connect
 Database:	geniuslab_nuxtstockdb
 Host:		localhost
 Username:	geniuslab_nuxtstockdb
-Password:	KLeBeWMT
+Password:	xxxx
 
 Step 3: Create New + > Web Service
 ---
@@ -2338,53 +2338,17 @@ In dashboard render Create New + > Web Service
 
 Deployed Nuxt 3 on Render.com
 ----
-
-Step 1: Build & Development Settings
-
-Build Command : nuxt generate
-Output Directory: dist
-
-MySQL on GeniusLab
-----
-Database:	geniuslab_nuxtstockdb
-Host:		localhost
-Username:	geniuslab_nuxtstockdb
-Password:	KLeBeWMT
-
-
 PostgreSQL on Render
 ---
 Hostname: dpg-cmuci16g1b2c73eguuig-a
 Port: 5432
 Database: sampleprismadb
 Username: postgresql
-Password: IAhazflWo20PYpVkm51MjGOncX3Hc0C9
-
+Password: xxxx
 
 Deployed Nuxt 3 on Render.com
 ---
 SERVER_PRESET=render_com
 NODE_VERSION=18
 STRAPI_URL=https://strapi-api-7kxr.onrender.com/api
-DATABASE_URL=postgres://postgresql:IAhazflWo20PYpVkm51MjGOncX3Hc0C9@dpg-cmuci16g1b2c73eguuig-a.singapore-postgres.render.com/sampleprismadb?schema=public
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+DATABASE_URL=xxxx/sampleprismadb?schema=public
